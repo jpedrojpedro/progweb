@@ -1,6 +1,6 @@
 README
 
-Terceiro trabalho disciplina - Programação Web
+>Terceiro trabalho disciplina - Programação Web
 
 Informações adicionais:
 Site da disciplina - http://cursos.meslin.com.br/home/jsp
