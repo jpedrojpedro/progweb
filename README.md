@@ -1,6 +1,5 @@
-README
-
-> Terceiro trabalho disciplina - Programação Web
+Terceiro Trabalho - Programação Web
+=========
 
 > Informações adicionais:
 Site da disciplina - http://cursos.meslin.com.br/home/jsp
@@ -11,11 +10,8 @@ http://www.slideshare.net/loianeg/using-the-egit-eclipse-plugin-with-git-hub-257
 > Instrução Clonar Projeto existente
 Inserir instruções
 
-> Script para criação do banco no SGBD MySQL:
-
--- -----------------------------------------------------
--- INÍCIO SCRIPT ---------------------------------------
--- -----------------------------------------------------
+Script para criação do banco no SGBD MySQL:
+=========
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -24,9 +20,8 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 CREATE SCHEMA IF NOT EXISTS `Reserva` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 USE `Reserva` ;
 
--- -----------------------------------------------------
 -- Table `Reserva`.`usuario`
--- -----------------------------------------------------
+
 CREATE  TABLE IF NOT EXISTS `Reserva`.`usuario` (
   `login` VARCHAR(20) NOT NULL ,
   `nome` VARCHAR(100) NOT NULL ,
@@ -39,10 +34,8 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
-
--- -----------------------------------------------------
 -- Table `Reserva`.`tipo_unidade`
--- -----------------------------------------------------
+
 CREATE  TABLE IF NOT EXISTS `Reserva`.`tipo_unidade` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `tipo` VARCHAR(45) NOT NULL ,
@@ -53,10 +46,8 @@ COLLATE = utf8_general_ci;
 
 CREATE UNIQUE INDEX `unq_tipo_unidade` ON `Reserva`.`tipo_unidade` (`tipo` ASC) ;
 
-
--- -----------------------------------------------------
 -- Table `Reserva`.`unidade`
--- -----------------------------------------------------
+
 CREATE  TABLE IF NOT EXISTS `Reserva`.`unidade` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `nome` VARCHAR(90) NOT NULL ,
@@ -75,10 +66,8 @@ CREATE UNIQUE INDEX `unq_nome_unidade` ON `Reserva`.`unidade` (`nome` ASC) ;
 
 CREATE INDEX `fk_tipo_unidade` ON `Reserva`.`unidade` (`id_tipo_unidade` ASC) ;
 
-
--- -----------------------------------------------------
 -- Table `Reserva`.`reserva`
--- -----------------------------------------------------
+
 CREATE  TABLE IF NOT EXISTS `Reserva`.`reserva` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `login_usuario` VARCHAR(20) NOT NULL ,
@@ -118,11 +107,6 @@ CREATE INDEX `fk_login_admin_reserva` ON `Reserva`.`reserva` (`login_usuario_adm
 
 USE `Reserva` ;
 
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
--- -----------------------------------------------------
--- FINAL SCRIPT ----------------------------------------
--- -----------------------------------------------------
